@@ -83,7 +83,7 @@ export default function About() {
               About Us
             </h2>
             <div
-              className="h-[3px] w-64 rounded-full mx-auto bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+              className="h-[3px] w-64 rounded-full mx-auto bg-linear-to-r from-transparent via-blue-500 to-transparent"
               
             ></div>
           </div>
