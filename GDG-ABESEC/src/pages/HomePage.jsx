@@ -3,6 +3,7 @@ import About from "../components/About";
 import WhatWeOffer from "../components/WhatWeOffer";
 import OrganisersAndActingGenerals from "../components/OrganiserAndActingGenerals";
 import Footer from "../components/Footer";
+import WhyJoinGDG from "../components/WhyJoinGDG";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
         <About />
         <WhatWeOffer />
       <OrganisersAndActingGenerals />
+      <WhyJoinGDG />
       <Footer />
       </div>
     </>

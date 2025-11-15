@@ -41,7 +41,10 @@ const WhatWeOffer = () => {
           <h2 className="text-6xl md:text-7xl font-bold text-slate-300 mb-4" >
               What We Are Offering
             </h2>
-          <div className="h-[3px] w-72 rounded-full mx-auto bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+          <div
+              className="h-[3px] w-96 rounded-full mx-auto bg-linear-to-r from-transparent via-blue-500 to-transparent"
+              
+            ></div>
         </div>
 
         

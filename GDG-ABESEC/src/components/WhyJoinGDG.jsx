@@ -1,0 +1,196 @@
+"use client";
+
+import React from "react";
+import Tilt from "react-parallax-tilt";
+import {
+  Code,
+  Trophy,
+  BookOpen,
+  Users,
+  MessageSquare,
+  Rocket,
+} from "lucide-react";
+
+/* ---------------------- CARD DATA ---------------------- */
+const cardData = [
+  {
+    title: "Technical Workshops",
+    desc: "Hands-on coding sessions with industry tools and frameworks.",
+    icon: <Code size={32} />,
+    tags: ["Hands-on", "Skill Boost", "Live Demos"],
+    themeHex: "#3b82f6",
+    colorClass: "text-blue-400",
+    bgGradient: "from-blue-500/10 via-blue-600/5 to-transparent",
+  },
+  {
+    title: "Hackathons",
+    desc: "48-hour innovation marathons with exciting prizes and mentorship.",
+    icon: <Trophy size={32} />,
+    tags: ["48 Hours", "Teamwork", "Innovation"],
+    themeHex: "#ef4444",
+    colorClass: "text-red-400",
+    bgGradient: "from-red-500/10 via-red-600/5 to-transparent",
+  },
+  {
+    title: "Study Jams",
+    desc: "Collaborative learning programs for certifications and skills.",
+    icon: <BookOpen size={32} />,
+    tags: ["Guided", "Peer Learning", "Certificates"],
+    themeHex: "#eab308",
+    colorClass: "text-yellow-300",
+    bgGradient: "from-yellow-500/10 via-yellow-600/5 to-transparent",
+  },
+  {
+    title: "Networking",
+    desc: "Connect with developers, professionals, and like-minded builders.",
+    icon: <Users size={32} />,
+    tags: ["Meet People", "Collaborate", "Community"],
+    themeHex: "#22c55e",
+    colorClass: "text-green-400",
+    bgGradient: "from-green-500/10 via-green-600/5 to-transparent",
+  },
+  {
+    title: "Tech Talks",
+    desc: "Learn real-world tech insights from industry experts.",
+    icon: <MessageSquare size={32} />,
+    tags: ["Experts", "Latest Tech", "Insights"],
+    themeHex: "#06b6d4",
+    colorClass: "text-cyan-400",
+    bgGradient: "from-cyan-500/10 via-cyan-600/5 to-transparent",
+  },
+  {
+    title: "Build Projects",
+    desc: "Work on real projects and build your developer portfolio.",
+    icon: <Rocket size={32} />,
+    tags: ["Real Projects", "Teamwork", "Portfolio"],
+    themeHex: "#a855f7",
+    colorClass: "text-purple-400",
+    bgGradient: "from-purple-500/10 via-purple-600/5 to-transparent",
+  },
+];
+
+const WhyJoinGDG = () => {
+  return (
+    <section className="w-full py-20 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-5">
+
+        {/* Heading */}
+        <h2 className="text-6xl md:text-7xl font-bold text-slate-300 mb-3 text-center">
+          Why Join{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            GDG?
+          </span>
+        </h2>
+        <p className="text-center text-gray-400 text-lg mb-14">
+          Explore what makes our community a powerful space for learning and growth.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {cardData.map((card, index) => (
+            <Tilt
+              key={index}
+              glareEnable={false}
+              tiltMaxAngleX={10}
+              tiltMaxAngleY={10}
+              scale={1.02}
+              transitionSpeed={2500}
+            >
+              <div
+                className={`
+                  group relative p-7 h-[350px] rounded-3xl
+                  bg-gradient-to-br ${card.bgGradient}
+                  border transition-all duration-700
+                  hover:scale-[1.02]
+                  overflow-hidden
+                `}
+                style={{
+                  /* 🔹 More Transparent Background */
+                  backgroundColor: "rgba(15, 23, 42, 0.25)",
+
+                  borderColor: `${card.themeHex}30`,
+                  boxShadow: `0 4px 24px ${card.themeHex}20`,
+                }}
+              >
+
+                {/* 3D Glow Effect */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-3xl pointer-events-none"
+                  style={{
+                    boxShadow: `
+                      0 0 60px ${card.themeHex}60,
+                      0 0 100px ${card.themeHex}40,
+                      inset 0 0 60px ${card.themeHex}20
+                    `,
+                    background: `radial-gradient(circle at 50% 50%, ${card.themeHex}15, transparent 70%)`,
+                  }}
+                ></div>
+
+                {/* Content */}
+                <div className="relative z-10">
+
+                  {/* ICON WITH BORDER (UPDATED HERE) */}
+                  <div
+                    className={`
+                      p-4 rounded-2xl inline-block mb-5
+                      ${card.colorClass}
+                      transition-all duration-500
+                      group-hover:scale-110 group-hover:rotate-3
+                    `}
+                    style={{
+                      backgroundColor: `${card.themeHex}15`,
+                      border: `2px solid ${card.themeHex}80`,   // 🔥 NEW BORDER
+                      boxShadow: `0 4px 16px ${card.themeHex}40`,
+                    }}
+                  >
+                    {card.icon}
+                  </div>
+
+                  {/* TITLE */}
+                  <h3 className="text-2xl font-bold mb-3 text-white">
+                    {card.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                    {card.desc}
+                  </p>
+
+                  {/* TAGS */}
+                  <div className="flex flex-wrap gap-2">
+                    {card.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className={`
+                          text-xs px-4 py-2 rounded-full
+                          ${card.colorClass}
+                          transition-all duration-500
+                          backdrop-blur-sm
+                        `}
+                        style={{
+                          backgroundColor: "transparent",
+                          border: `1px solid ${card.themeHex}50`,
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Hover Border Glow */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-3xl pointer-events-none"
+                  style={{
+                    border: `2px solid ${card.themeHex}60`,
+                  }}
+                ></div>
+              </div>
+            </Tilt>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhyJoinGDG;
