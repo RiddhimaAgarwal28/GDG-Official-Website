@@ -1,17 +1,82 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BounceCards from "./ui/BounceCards";
 import { motion, AnimatePresence } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+/* ---------------------- 3D CARD COMPONENTS ---------------------- */
+
+const CardContainer = ({ children, className = "", ...props }) => {
+  const containerRef = useRef(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    setRotateY(((x - centerX) / centerX) * 10);
+    setRotateX(((centerY - y) / centerY) * 10);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className={`group perspective-1000 ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: "1000px" }}
+      {...props}
+    >
+      <div
+        style={{
+          transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+          transition: "transform 0.15s ease-out",
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const CardBody = ({ children, className = "" }) => {
+  return <div className={className}>{children}</div>;
+};
+
+const CardItem = ({ children, translateZ = 0 }) => {
+  return (
+    <div
+      style={{
+        transform: `translateZ(${translateZ}px)`,
+        transformStyle: "preserve-3d",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+/* ---------------------- EVENT CARDS DATA ---------------------- */
 
 const eventsData = [
   {
     title: "CodeStorm 2025",
     date: "March 12, 2025",
-    description:
-      "A coding hackathon where developers collaborated and built impactful tech solutions.",
+    description: "A coding hackathon where developers collaborated.",
     thumbnail: "/event1.png",
-
     gallery: [
       "https://source.unsplash.com/random/800x600/?coding",
       "https://source.unsplash.com/random/800x600/?hackathon",
@@ -21,9 +86,9 @@ const eventsData = [
     ],
   },
   {
+    title: "HackVerse",
     date: "April 5, 2025",
-    description:
-      "A 24-hour hackathon focused on creative problem solving and real-world innovation.",
+    description: "A 24-hour hackathon based on innovation.",
     thumbnail: "/event2.png",
     gallery: [
       "/images/events/hack1.jpg",
@@ -36,8 +101,7 @@ const eventsData = [
   {
     title: "Web Innovate",
     date: "May 10, 2025",
-    description:
-      "A front-end challenge encouraging creativity in modern web design and user experience.",
+    description: "A challenge for modern UI/UX design.",
     thumbnail: "/event3.png",
     gallery: [
       "/images/events/web1.jpg",
@@ -50,8 +114,7 @@ const eventsData = [
   {
     title: "TechTalks",
     date: "June 3, 2025",
-    description:
-      "Expert-led sessions sharing insights on AI, Web3, cloud computing, and more.",
+    description: "Insights from industry experts.",
     thumbnail: "/event4.png",
     gallery: [
       "/images/events/talk1.jpg",
@@ -61,50 +124,102 @@ const eventsData = [
       "/images/events/talk5.jpg",
     ],
   },
+  {
+    title: "AI Sprint",
+    date: "July 21, 2025",
+    description: "AI-powered competition exploring ML creativity.",
+    thumbnail: "/event5.png",
+    gallery: [
+      "https://source.unsplash.com/random/800x600/?ai",
+      "https://source.unsplash.com/random/800x600/?machinelearning",
+      "https://source.unsplash.com/random/800x600/?neuralnetwork",
+      "https://source.unsplash.com/random/800x600/?deeplearning",
+      "https://source.unsplash.com/random/800x600/?datascience",
+    ],
+  },
+  {
+    title: "Cloud Expo",
+    date: "August 9, 2025",
+    description: "Cloud computing and futuristic deployments.",
+    thumbnail: "/event3.png",
+    gallery: [
+      "/images/events/cloud1.jpg",
+      "/images/events/cloud2.jpg",
+      "/images/events/cloud3.jpg",
+      "/images/events/cloud4.jpg",
+      "/images/events/cloud5.jpg",
+    ],
+  },
 ];
+
+/* ---------------------- MAIN COMPONENT ---------------------- */
 
 export default function EventsCard() {
   const [activeEvent, setActiveEvent] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   return (
     <section className="w-full min-h-screen bg-black text-white py-16">
       <h2 className="text-4xl font-bold text-center mb-12">Past Events</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-10 max-w-5xl mx-auto">
         {eventsData.map((event, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
-            style={{ height: "360px" }}
-            onClick={() => setActiveEvent(event)}
-          >
-            <img
-              src={event.thumbnail}
-              alt={event.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-300 transition-all duration-500 p-5 flex flex-col justify-end">
-              <p className="text-gray-300 text-xs">{event.date}</p>
-              <h3 className="text-xl font-semibold">{event.title}</h3>
-              <p className="text-gray-400 text-sm mt-1">{event.description}</p>
-
-              <p
-                className="mt-4 text-sm text-blue-400 font-medium flex items-center gap-2 cursor-pointer hover:text-blue-300 transition-all"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveEvent(event);
-                }}
+          <div key={index} data-aos="fade-up">
+            <CardContainer
+              className="cursor-pointer"
+              onClick={() => setActiveEvent(event)}
+            >
+              {/* SCALE AFTER CONTENT APPEARS */}
+              <CardBody
+                className="
+                  relative rounded-2xl overflow-hidden 
+                  border border-slate-700/50 bg-slate-900/70 backdrop-blur-sm
+                  transition-all duration-500 ease-out
+                  group-hover:scale-[1.05] delay-200 
+                  w-[430px]
+                "
               >
-                Explore More
-                <span className="text-lg group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </p>
-            </div>
-          </motion.div>
+                <CardItem translateZ={40}>
+                  <img
+                    src={event.thumbnail}
+                    alt={event.title}
+                    className="w-[430px] h-[350px] object-cover"
+                  />
+                </CardItem>
+
+                {/* Overlay that triggers scale */}
+                <div
+                  className="
+                    absolute inset-0 bg-black/60 
+                    opacity-0 group-hover:opacity-100 
+                    transition-all duration-300 
+                    p-5 flex flex-col justify-end
+                  "
+                >
+                  <p className="text-gray-300 text-xs">{event.date}</p>
+                  <h3 className="text-xl font-semibold">{event.title}</h3>
+                  <p className="text-gray-400 text-sm mt-1">{event.description}</p>
+
+                  <p
+                    className="mt-4 text-sm text-blue-400 font-medium hover:text-blue-300"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveEvent(event);
+                    }}
+                  >
+                    Explore More →
+                  </p>
+                </div>
+              </CardBody>
+            </CardContainer>
+          </div>
         ))}
       </div>
 
@@ -114,7 +229,7 @@ export default function EventsCard() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4"
           >
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
@@ -124,7 +239,7 @@ export default function EventsCard() {
               className="relative bg-gray-900/20 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 shadow-xl"
             >
               <button
-                className="absolute cursor-pointer top-3 right-3 text-gray-300 hover:text-white text-3xl"
+                className="absolute top-3 right-3 text-gray-300 hover:text-white text-3xl"
                 onClick={() => setActiveEvent(null)}
               >
                 ×

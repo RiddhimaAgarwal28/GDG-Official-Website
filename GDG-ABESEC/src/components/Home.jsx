@@ -42,7 +42,7 @@ const Home = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-3xl sm:text-5xl md:text-7xl font-extrabold space-mono-regular text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-yellow-400 via-green-500 to-red-500 drop-shadow-[0_0_25px_rgba(255,255,255,0.1)]"
+          className="text-3xl sm:text-5xl md:text-7xl font-extrabold space-mono-regular text-transparent bg-clip-text bg-linear-to-r from-blue-500 via-yellow-400 via-green-500 to-red-500 drop-shadow-[0_0_25px_rgba(255,255,255,0.1)]"
         >
           Welcome to <span className="text-blue-500">G</span>
           <span className="text-red-500">o</span>

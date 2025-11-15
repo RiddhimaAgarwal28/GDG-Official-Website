@@ -203,7 +203,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="relative  bg-gradient-to-br from-gray-100 to-gray-300 dark:from-neutral-900 dark:to-neutral-950 flex items-center justify-center text-center">
+    <div className="relative  bg-linear-to-br from-gray-100 to-gray-300 dark:from-neutral-900 dark:to-neutral-950 flex items-center justify-center text-center">
       <FloatingDock
         items={items}
         desktopClassName="bottom-6"
