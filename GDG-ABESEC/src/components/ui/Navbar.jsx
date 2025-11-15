@@ -177,7 +177,7 @@ export default function Navbar() {
     {
       title: "Home",
       icon: <IconHome className="w-full h-full text-blue-500" />,
-      href: "#home",
+      href: "/",
     },
     {
       title: "About",

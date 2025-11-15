@@ -5,7 +5,7 @@ import BounceCards from "./ui/BounceCards";
 import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Navbar from "./ui/Navbar";
 
 const CardContainer = ({ children, className = "", ...props }) => {
   const containerRef = useRef(null);
@@ -157,18 +157,39 @@ export default function EventsCard() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: true,
-      offset: 100,
+      once: false,
+      offset: 120,
     });
   }, []);
 
   return (
     <>
+
+    <div className="relative z-10 pointer-events-none">
+        <img
+          src="https://www.svgrepo.com/show/353810/google-developers.svg"
+          className="fixed h-12 w-14 md:h-16 md:w-20 top-6 left-4 md:top-12 md:left-8 pointer-events-auto"
+          alt="gdgLogo"
+        />
+
+        <div className="fixed flex flex-wrap items-center top-20 left-4 md:top-15 md:left-30 space-mono-regular space-mono-bold text-3xl md:text-4xl">
+          <span className="text-blue-500">G</span>
+          <span className="text-red-500">o</span>
+          <span className="text-yellow-300">o</span>
+          <span className="text-green-500">g</span>
+          <span className="text-blue-500">l</span>
+          <span className="text-red-500">e</span>
+        </div>
+
+        <div className="fixed text-white text-xl md:text-3xl top-28 left-4 md:top-16 md:left-63 ml-3 space-mono-regular space-mono-bold">
+          Developers Group
+        </div>
+      </div>
     <section className="h-screen bg-black text-white flex items-center justify-center"> 
       <h1>Dummy section</h1>
     </section>
     <section className="w-full min-h-screen bg-black text-white py-16">
-      <h2 className="text-4xl font-bold text-center mb-12">Past Events</h2>
+      <h2 className="text-6xl font-bold text-center mb-12">Past <span className="text-cyan-600">Events</span></h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-10 max-w-5xl mx-auto">
         {eventsData.map((event, index) => (
@@ -257,6 +278,7 @@ export default function EventsCard() {
         )}
       </AnimatePresence>
     </section>
+    <Navbar  />
       </>
   );
 }
