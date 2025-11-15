@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-/* ---------------------- 3D CARD COMPONENTS ---------------------- */
 
 const CardContainer = ({ children, className = "", ...props }) => {
   const containerRef = useRef(null);
@@ -69,7 +68,6 @@ const CardItem = ({ children, translateZ = 0 }) => {
   );
 };
 
-/* ---------------------- EVENT CARDS DATA ---------------------- */
 
 const eventsData = [
   {
@@ -78,11 +76,11 @@ const eventsData = [
     description: "A coding hackathon where developers collaborated.",
     thumbnail: "/event1.png",
     gallery: [
-      "https://source.unsplash.com/random/800x600/?coding",
-      "https://source.unsplash.com/random/800x600/?hackathon",
-      "https://source.unsplash.com/random/800x600/?developers",
-      "https://source.unsplash.com/random/800x600/?programming",
-      "https://source.unsplash.com/random/800x600/?technology",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
   {
@@ -91,11 +89,11 @@ const eventsData = [
     description: "A 24-hour hackathon based on innovation.",
     thumbnail: "/event2.png",
     gallery: [
-      "/images/events/hack1.jpg",
-      "/images/events/hack2.jpg",
-      "/images/events/hack3.jpg",
-      "/images/events/hack4.jpg",
-      "/images/events/hack5.jpg",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
   {
@@ -104,11 +102,11 @@ const eventsData = [
     description: "A challenge for modern UI/UX design.",
     thumbnail: "/event3.png",
     gallery: [
-      "/images/events/web1.jpg",
-      "/images/events/web2.jpg",
-      "/images/events/web3.jpg",
-      "/images/events/web4.jpg",
-      "/images/events/web5.jpg",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
   {
@@ -117,11 +115,11 @@ const eventsData = [
     description: "Insights from industry experts.",
     thumbnail: "/event4.png",
     gallery: [
-      "/images/events/talk1.jpg",
-      "/images/events/talk2.jpg",
-      "/images/events/talk3.jpg",
-      "/images/events/talk4.jpg",
-      "/images/events/talk5.jpg",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
   {
@@ -130,11 +128,11 @@ const eventsData = [
     description: "AI-powered competition exploring ML creativity.",
     thumbnail: "/event5.png",
     gallery: [
-      "https://source.unsplash.com/random/800x600/?ai",
-      "https://source.unsplash.com/random/800x600/?machinelearning",
-      "https://source.unsplash.com/random/800x600/?neuralnetwork",
-      "https://source.unsplash.com/random/800x600/?deeplearning",
-      "https://source.unsplash.com/random/800x600/?datascience",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
   {
@@ -143,16 +141,15 @@ const eventsData = [
     description: "Cloud computing and futuristic deployments.",
     thumbnail: "/event3.png",
     gallery: [
-      "/images/events/cloud1.jpg",
-      "/images/events/cloud2.jpg",
-      "/images/events/cloud3.jpg",
-      "/images/events/cloud4.jpg",
-      "/images/events/cloud5.jpg",
+      "/event1.png",
+      "/event2.png",
+      "/event3.png",
+      "/event4.png",
+      "/event5.png",
     ],
   },
 ];
 
-/* ---------------------- MAIN COMPONENT ---------------------- */
 
 export default function EventsCard() {
   const [activeEvent, setActiveEvent] = useState(null);
@@ -166,6 +163,10 @@ export default function EventsCard() {
   }, []);
 
   return (
+    <>
+    <section className="h-screen bg-black text-white flex items-center justify-center"> 
+      <h1>Dummy section</h1>
+    </section>
     <section className="w-full min-h-screen bg-black text-white py-16">
       <h2 className="text-4xl font-bold text-center mb-12">Past Events</h2>
 
@@ -176,7 +177,6 @@ export default function EventsCard() {
               className="cursor-pointer"
               onClick={() => setActiveEvent(event)}
             >
-              {/* SCALE AFTER CONTENT APPEARS */}
               <CardBody
                 className="
                   relative rounded-2xl overflow-hidden 
@@ -190,11 +190,10 @@ export default function EventsCard() {
                   <img
                     src={event.thumbnail}
                     alt={event.title}
-                    className="w-[430px] h-[350px] object-cover"
+                    className="w-[430px] h-96 object-cover"
                   />
                 </CardItem>
 
-                {/* Overlay that triggers scale */}
                 <div
                   className="
                     absolute inset-0 bg-black/60 
@@ -229,25 +228,23 @@ export default function EventsCard() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/20 backdrop-blur-md flex items-center justify-center z-50 p-4"
           >
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="relative bg-gray-900/20 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 shadow-xl"
+              className="relative  backdrop-blur-sm p-8 rounded-2xl border border-gray-700 shadow-xl"
             >
               <button
-                className="absolute top-3 right-3 text-gray-300 hover:text-white text-3xl"
+                className="absolute cursor-pointer top-3 right-3 text-gray-300 hover:text-white text-3xl"
                 onClick={() => setActiveEvent(null)}
               >
                 ×
               </button>
 
-              <h3 className="text-center text-2xl font-bold mb-6">
-                {activeEvent.title}
-              </h3>
+              
 
               <BounceCards
                 images={activeEvent.gallery}
@@ -260,5 +257,6 @@ export default function EventsCard() {
         )}
       </AnimatePresence>
     </section>
+      </>
   );
 }
