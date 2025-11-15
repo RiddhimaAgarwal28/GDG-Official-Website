@@ -11,7 +11,6 @@ import {
   Rocket,
 } from "lucide-react";
 
-/* ---------------------- CARD DATA ---------------------- */
 const cardData = [
   {
     title: "Technical Workshops",
@@ -74,10 +73,9 @@ const WhyJoinGDG = () => {
     <section className="w-full py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-5">
 
-        {/* Heading */}
         <h2 className="text-6xl md:text-7xl font-bold text-slate-300 mb-3 text-center">
           Why Join{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
             GDG?
           </span>
         </h2>
@@ -104,7 +102,6 @@ const WhyJoinGDG = () => {
                   overflow-hidden
                 `}
                 style={{
-                  /* 🔹 More Transparent Background */
                   backgroundColor: "rgba(15, 23, 42, 0.25)",
 
                   borderColor: `${card.themeHex}30`,
@@ -112,7 +109,6 @@ const WhyJoinGDG = () => {
                 }}
               >
 
-                {/* 3D Glow Effect */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-3xl pointer-events-none"
                   style={{
@@ -125,10 +121,8 @@ const WhyJoinGDG = () => {
                   }}
                 ></div>
 
-                {/* Content */}
                 <div className="relative z-10">
 
-                  {/* ICON WITH BORDER (UPDATED HERE) */}
                   <div
                     className={`
                       p-4 rounded-2xl inline-block mb-5
@@ -138,24 +132,21 @@ const WhyJoinGDG = () => {
                     `}
                     style={{
                       backgroundColor: `${card.themeHex}15`,
-                      border: `2px solid ${card.themeHex}80`,   // 🔥 NEW BORDER
+                      border: `2px solid ${card.themeHex}80`,   
                       boxShadow: `0 4px 16px ${card.themeHex}40`,
                     }}
                   >
                     {card.icon}
                   </div>
 
-                  {/* TITLE */}
                   <h3 className="text-2xl font-bold mb-3 text-white">
                     {card.title}
                   </h3>
 
-                  {/* DESCRIPTION */}
                   <p className="text-gray-400 text-sm leading-relaxed mb-5">
                     {card.desc}
                   </p>
 
-                  {/* TAGS */}
                   <div className="flex flex-wrap gap-2">
                     {card.tags.map((tag, i) => (
                       <span
@@ -177,7 +168,6 @@ const WhyJoinGDG = () => {
                   </div>
                 </div>
 
-                {/* Hover Border Glow */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-3xl pointer-events-none"
                   style={{
