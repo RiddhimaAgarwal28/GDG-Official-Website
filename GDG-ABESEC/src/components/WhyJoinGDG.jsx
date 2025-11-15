@@ -71,6 +71,7 @@ const cardData = [
 
 const WhyJoinGDG = () => {
   return (
+    <>
     <section className="w-full py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-5">
 
@@ -181,6 +182,17 @@ const WhyJoinGDG = () => {
         </div>
       </div>
     </section>
+     <div className="w-full bg-black h-96 flex justify-center px-4">
+  <video
+    className="w-full max-w-xl rounded-2xl object-cover object-center overflow-hidden"
+    src="/video1.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</div>
+</>
   );
 };
 

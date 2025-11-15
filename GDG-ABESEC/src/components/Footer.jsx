@@ -6,17 +6,7 @@ import gdgLogo from "../assets/gdg-logo.png"; // transparent background recommen
 const Footer = () => {
   return (
     <>
-   <div className="w-full bg-black h-96 flex justify-center px-4">
-  <video
-    className="w-full max-w-xl rounded-2xl object-cover object-center overflow-hidden"
-    src="/video1.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-</div>
-
+  
 
     <footer className="bg-black text-white py-8 flex flex-col items-center space-y-8">
       {/* Curved marquee text */}
