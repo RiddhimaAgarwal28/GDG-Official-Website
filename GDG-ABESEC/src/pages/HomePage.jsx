@@ -9,12 +9,12 @@ export default function HomePage() {
   return (
     <>
       <div className="w-full  overflow-x-hidden">
-      <Home />
+        <Home />
         <About />
         <WhatWeOffer />
-      <OrganisersAndActingGenerals />
-      <WhyJoinGDG />
-      <Footer />
+        <OrganisersAndActingGenerals />
+        <WhyJoinGDG />
+        <Footer />
       </div>
     </>
   );
