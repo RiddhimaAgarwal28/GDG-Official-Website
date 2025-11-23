@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { cn } from "../../lib/utils";
 import {
   IconHome,
   IconUser,
@@ -11,6 +10,8 @@ import {
   IconHelpCircle,
   IconInfoCircle,
   IconUsers,
+  IconMenu2,
+  IconX,
 } from "@tabler/icons-react";
 import {
   AnimatePresence,
@@ -19,56 +20,88 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
-import { FaTeamspeak } from "react-icons/fa";
+
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 // -------------------- Floating Dock Navbar --------------------
 
 export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
   return (
     <>
-      <img
-        className="bg-red"
-        src="GDG-ABESEC/public/google-developers-svgrepo-com.svg"
-        alt=""
-      />
       <FloatingDockDesktop items={items} className={desktopClassName} />
       <FloatingDockMobile items={items} className={mobileClassName} />
     </>
   );
 };
 
-// -------------------- Mobile Dock --------------------
+// -------------------- Mobile Hamburger Dock --------------------
 
 const FloatingDockMobile = ({ items, className }) => {
   const [open, setOpen] = useState(false);
+
   return (
-    <div className={cn("fixed  top-4 right-4 z-50 block md:hidden", className)}>
+    <div className={cn("fixed top-4 right-4 z-50 block lg:hidden", className)}>
+      {/* Hamburger Button */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <AnimatePresence mode="wait">
+          {open ? (
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <IconX className="h-6 w-6 text-neutral-700 dark:text-neutral-200" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <IconMenu2 className="h-6 w-6 text-neutral-700 dark:text-neutral-200" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+
+      {/* Menu Items */}
       <AnimatePresence>
         {open && (
           <motion.div
-            layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-14 right-0 w-48 rounded-2xl bg-gray-50 dark:bg-neutral-900 shadow-xl overflow-hidden"
           >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: { delay: idx * 0.05 },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
-              >
-                <a
+            <div className="flex flex-col">
+              {items.map((item, idx) => (
+                <motion.a
+                  key={item.title}
                   href={item.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900 shadow-md"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: idx * 0.05 }}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors border-b border-gray-200 dark:border-neutral-800 last:border-b-0"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </a>
-              </motion.div>
-            ))}
+                  <div className="h-5 w-5">{item.icon}</div>
+                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+                    {item.title}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -85,7 +118,7 @@ const FloatingDockDesktop = ({ items, className }) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "fixed mx-auto top-14 left-1/2 z-50  -translate-x-1/2 transform h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 flex dark:bg-neutral-900 shadow-lg",
+        "fixed mx-auto top-14 left-1/2 z-50 -translate-x-1/2 transform h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 hidden lg:flex dark:bg-neutral-900 shadow-lg",
         className
       )}
     >
@@ -182,7 +215,6 @@ export default function Navbar() {
     {
       title: "About",
       icon: <IconInfoCircle className="w-full h-full text-green-500" />,
-
       href: "#about",
     },
     {
@@ -203,25 +235,8 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="relative  bg-linear-to-br from-gray-100 to-gray-300 dark:from-neutral-900 dark:to-neutral-950 flex items-center justify-center text-center">
-      <FloatingDock
-        items={items}
-        desktopClassName="bottom-6"
-        mobileClassName="bottom-4 right-4"
-      />
-    </div>
-  );
-}
-function Image() {
-  return (
-    <div className=" flex justify-center items-center   h-20 w-20 rounded-full">
-      <div>
-        <img
-          src="https://www.svgrepo.com/show/353810/google-developers.svg"
-          alt="Logo"
-          className="w-8 h-8"
-        />
-      </div>
+    <div className="relative">
+      <FloatingDock items={items} />
     </div>
   );
 }
