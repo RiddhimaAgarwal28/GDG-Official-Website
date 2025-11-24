@@ -7,7 +7,7 @@ const teamMembers = {
       name: "Sarah Johnson", 
       role: "Chief Organiser", 
       description: "Visionary leader orchestrating the entire event with 15+ years of experience.",
-      img: "/Organiser.jpg",
+      img: "/TeamPageImages/Arya Schwetank.jpg",
       linkedin: "https://linkedin.com/in/sarahjohnson",
       github: "https://github.com/sarahjohnson"
     }
@@ -17,7 +17,7 @@ const teamMembers = {
       name: "Michael Chen", 
       role: "Acting General", 
       description: "Strategic leader managing operations and team coordination.",
-      img: "/ActingGeneral1.jpg",
+      img: "/TeamPageImages/Prakhar Tiwari.jpg",
       linkedin: "https://linkedin.com/in/michaelchen",
       github: "https://github.com/michaelchen"
     },
@@ -25,7 +25,7 @@ const teamMembers = {
       name: "Emily Rodriguez", 
       role: "Acting General", 
       description: "Expert in logistics and event execution management.",
-      img: "/ActingGeneral2.jpg",
+      img: "/TeamPageImages/Ayush Jain AG.jpg",
       linkedin: "https://linkedin.com/in/emilyrodriguez",
       github: "https://github.com/emilyrodriguez"
     },
@@ -33,7 +33,7 @@ const teamMembers = {
       name: "David Kim", 
       role: "Acting General", 
       description: "Technical lead ensuring smooth event infrastructure.",
-      img: "/ActingGeneral3.jpg",
+      img: "/TeamPageImages/Riya Jaiswal.jpg",
       linkedin: "https://linkedin.com/in/davidkim",
       github: "https://github.com/davidkim"
     },
@@ -41,7 +41,7 @@ const teamMembers = {
       name: "Lisa Anderson", 
       role: "Acting General", 
       description: "Marketing and communications specialist for the event.",
-      img: "/ActingGeneral4.jpg",
+      img: "/TeamPageImages/Kshitiz Srivastav.jpg",
       linkedin: "https://linkedin.com/in/lisaanderson",
       github: "https://github.com/lisaanderson"
     },
@@ -49,7 +49,7 @@ const teamMembers = {
       name: "James Wilson", 
       role: "Acting General", 
       description: "Operations manager handling event workflows.",
-      img: "/ActingGeneral5.jpg",
+      img: "/TeamPageImages/Deepanshu Kaushik.jpg",
       linkedin: "https://linkedin.com/in/jameswilson",
       github: "https://github.com/jameswilson"
     }
@@ -59,7 +59,7 @@ const teamMembers = {
       name: "Maria Garcia", 
       role: "Team Lead", 
       description: "Leading the design and creative direction team.",
-      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Alok Ranjan Singh.jpg",
       linkedin: "https://linkedin.com/in/mariagarcia",
       github: "https://github.com/mariagarcia"
     },
@@ -67,7 +67,7 @@ const teamMembers = {
       name: "Robert Taylor", 
       role: "Team Lead", 
       description: "Backend operations and database management lead.",
-      img: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Ayush Goyal.jpg",
       linkedin: "https://linkedin.com/in/roberttaylor",
       github: "https://github.com/roberttaylor"
     },
@@ -75,7 +75,7 @@ const teamMembers = {
       name: "Jennifer Lee", 
       role: "Team Lead", 
       description: "Human resources and team coordination specialist.",
-      img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Keshav Khippal.jpg",
       linkedin: "https://linkedin.com/in/jenniferlee",
       github: "https://github.com/jenniferlee"
     },
@@ -83,7 +83,7 @@ const teamMembers = {
       name: "William Brown", 
       role: "Team Lead", 
       description: "Sales and partnership development lead.",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Anshika Srivastav.jpg",
       linkedin: "https://linkedin.com/in/williambrown",
       github: "https://github.com/williambrown"
     },
@@ -91,7 +91,7 @@ const teamMembers = {
       name: "Amanda White", 
       role: "Team Lead", 
       description: "Frontend development and UI implementation lead.",
-      img: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Harshit Agarwal.jpg",
       linkedin: "https://linkedin.com/in/amandawhite",
       github: "https://github.com/amandawhite"
     },
@@ -99,7 +99,7 @@ const teamMembers = {
       name: "Christopher Davis", 
       role: "Team Lead", 
       description: "DevOps and infrastructure deployment lead.",
-      img: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Amanya Maurya.jpg",
       linkedin: "https://linkedin.com/in/christopherdavis",
       github: "https://github.com/christopherdavis"
     },
@@ -107,7 +107,7 @@ const teamMembers = {
       name: "Jessica Martinez", 
       role: "Team Lead", 
       description: "Content creation and storytelling lead.",
-      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Ayush Jain EH.jpg",
       linkedin: "https://linkedin.com/in/jessicamartinez",
       github: "https://github.com/jessicamartinez"
     },
@@ -115,7 +115,7 @@ const teamMembers = {
       name: "Daniel Thompson", 
       role: "Team Lead", 
       description: "Data analytics and insights lead.",
-      img: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Arpan Pal.jpg",
       linkedin: "https://linkedin.com/in/danielthompson",
       github: "https://github.com/danielthompson"
     },
@@ -123,7 +123,7 @@ const teamMembers = {
       name: "Nicole Harris", 
       role: "Team Lead", 
       description: "Quality assurance and testing lead.",
-      img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Aditya Kr. OC.jpg",
       linkedin: "https://linkedin.com/in/nicoleharris",
       github: "https://github.com/nicoleharris"
     },
@@ -131,7 +131,7 @@ const teamMembers = {
       name: "Andrew Clark", 
       role: "Team Lead", 
       description: "Security and compliance lead.",
-      img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Ayushi Singh.jpg",
       linkedin: "https://linkedin.com/in/andrewclark",
       github: "https://github.com/andrewclark"
     },
@@ -139,7 +139,7 @@ const teamMembers = {
       name: "Sophie Turner", 
       role: "Team Lead", 
       description: "Community engagement and outreach lead.",
-      img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Aadarsh Dhiman.jpg",
       linkedin: "https://linkedin.com/in/sophieturner",
       github: "https://github.com/sophieturner"
     },
@@ -147,9 +147,17 @@ const teamMembers = {
       name: "Nathan Brooks", 
       role: "Team Lead", 
       description: "Product strategy and development lead.",
-      img: "https://images.unsplash.com/photo-1502378735452-bc7d86632805?w=700&h=800&fit=crop",
+      img: "/TeamPageImages/Arya Schwetank.jpg",
       linkedin: "https://linkedin.com/in/nathanbrooks",
       github: "https://github.com/nathanbrooks"
+    },
+    { 
+      name: "Emma Wilson", 
+      role: "Team Lead", 
+      description: "Brand strategy and creative communications lead.",
+      img: "/TeamPageImages/Deepanshu Kaushik.jpg",
+      linkedin: "https://linkedin.com/in/emmawilson",
+      github: "https://github.com/emmawilson"
     }
   ]
 };
@@ -213,6 +221,7 @@ const TeamMemberCard = ({ member, index }) => {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center top;
           filter: grayscale(100%) brightness(0.65);
           transition: filter 0.5s ease, transform 0.5s ease;
         }
@@ -542,7 +551,6 @@ const Team = () => {
           align-items: center;
           gap: 16px;
           z-index: 2;
-          
         }
 
         .tm-scroll-text {
@@ -553,27 +561,26 @@ const Team = () => {
           font-weight: 500;
         }
 
-      .tm-scroll-arrow {
-  width: 24px;
-  height: 24px;
-  border-bottom: 2px solid #666666;
-  border-right: 2px solid #666666;
-  transform: rotate(45deg);
-  animation: tm-bounce 2s infinite ease-in-out;
-}
+        .tm-scroll-arrow {
+          width: 24px;
+          height: 24px;
+          border-bottom: 2px solid #666666;
+          border-right: 2px solid #666666;
+          transform: rotate(45deg);
+          animation: tm-bounce 2s infinite ease-in-out;
+        }
 
-@keyframes tm-bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: rotate(45deg) translateY(0);
-  }
-  40% {
-    transform: rotate(45deg) translateY(10px);
-  }
-  60% {
-    transform: rotate(45deg) translateY(5px);
-  }
-}
-
+        @keyframes tm-bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: rotate(45deg) translateY(0);
+          }
+          40% {
+            transform: rotate(45deg) translateY(12px);
+          }
+          60% {
+            transform: rotate(45deg) translateY(6px);
+          }
+        }
 
         .tm-section {
           width: 100%;
@@ -593,7 +600,7 @@ const Team = () => {
           padding: 0 60px;
           display: flex;
           align-items: center;
-          gap: 0px;
+          gap: 80px;
         }
 
         .tm-organiser-card-wrapper {
@@ -630,7 +637,7 @@ const Team = () => {
 
         @media (max-width: 1400px) {
           .tm-organiser-container {
-            gap: 20px;
+            gap: 60px;
           }
 
           .tm-organiser-card-wrapper {
@@ -694,6 +701,7 @@ const Team = () => {
       `}</style>
 
       <div className="tm-wrapper">
+        {/* Hero Section */}
         <section className="tm-hero">
           <div className="tm-hero-content">
             <h1 className="tm-hero-title">Meet Our Team</h1>
@@ -705,7 +713,9 @@ const Team = () => {
           </div>
         </section>
 
+        {/* Team Sections */}
         <div className="tm-section">
+          {/* Organiser Section */}
           <div className="tm-organiser-section">
             <div className="tm-organiser-container">
               <div className="tm-organiser-card-wrapper">
@@ -721,6 +731,7 @@ const Team = () => {
             </div>
           </div>
 
+          {/* Acting Generals Section */}
           <div className="tm-generals-section">
             <SectionHeading title="ACTING GENERALS" />
             <div className="tm-grid">
@@ -749,8 +760,10 @@ const Team = () => {
             </div>
           </div>
 
+          {/* Leads Section - 13 cards total */}
           <div className="tm-leads-section">
             <SectionHeading title="LEADS" />
+            {/* Cards 1-2 */}
             <div className="tm-grid">
               {teamMembers.leads.slice(0, 2).map((member, index) => (
                 <TeamMemberCard 
@@ -760,12 +773,14 @@ const Team = () => {
                 />
               ))}
             </div>
+            {/* Card 3 - Center */}
             <div className="tm-grid-single">
               <TeamMemberCard 
                 member={teamMembers.leads[2]} 
                 index={8}
               />
             </div>
+            {/* Cards 4-5 */}
             <div className="tm-grid">
               {teamMembers.leads.slice(3, 5).map((member, index) => (
                 <TeamMemberCard 
@@ -775,12 +790,14 @@ const Team = () => {
                 />
               ))}
             </div>
+            {/* Card 6 - Center */}
             <div className="tm-grid-single">
               <TeamMemberCard 
                 member={teamMembers.leads[5]} 
                 index={11}
               />
             </div>
+            {/* Cards 7-8 */}
             <div className="tm-grid">
               {teamMembers.leads.slice(6, 8).map((member, index) => (
                 <TeamMemberCard 
@@ -790,12 +807,14 @@ const Team = () => {
                 />
               ))}
             </div>
+            {/* Card 9 - Center */}
             <div className="tm-grid-single">
               <TeamMemberCard 
                 member={teamMembers.leads[8]} 
                 index={14}
               />
             </div>
+            {/* Cards 10-11 */}
             <div className="tm-grid">
               {teamMembers.leads.slice(9, 11).map((member, index) => (
                 <TeamMemberCard 
@@ -805,10 +824,18 @@ const Team = () => {
                 />
               ))}
             </div>
+            {/* Card 12 - Center */}
             <div className="tm-grid-single">
               <TeamMemberCard 
                 member={teamMembers.leads[11]} 
                 index={17}
+              />
+            </div>
+            {/* Card 13 - Last card (NEW) */}
+            <div className="tm-grid">
+              <TeamMemberCard 
+                member={teamMembers.leads[12]} 
+                index={18}
               />
             </div>
           </div>
