@@ -63,104 +63,104 @@ const teamMembers = {
       role: "Design Lead", 
       description: "Leading the design and creative direction team.",
       img: "/TeamPageImages/Alok Ranjan Singh.jpg",
-      linkedin: "https://linkedin.com/in/mariagarcia",
-      github: "https://github.com/mariagarcia"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Ayush Goyal", 
       role: "Design Lead", 
       description: "Backend operations and database management lead.",
       img: "/TeamPageImages/Ayush Goyal.jpg",
-      linkedin: "https://linkedin.com/in/roberttaylor",
-      github: "https://github.com/roberttaylor"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Keshav Khippal", 
       role: "Technical Lead", 
       description: "Human resources and team coordination specialist.",
       img: "/TeamPageImages/Keshav Khippal.jpg",
-      linkedin: "https://linkedin.com/in/jenniferlee",
-      github: "https://github.com/jenniferlee"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Anshika Srivastav", 
       role: "Promotions Lead", 
       description: "Sales and partnership development lead.",
       img: "/TeamPageImages/Anshika Srivastav.jpg",
-      linkedin: "https://linkedin.com/in/williambrown",
-      github: "https://github.com/williambrown"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Harshit Agarwal", 
       role: "Promotions Lead", 
       description: "Frontend development and UI implementation lead.",
       img: "/TeamPageImages/Harshit Agarwal.jpg",
-      linkedin: "https://linkedin.com/in/amandawhite",
-      github: "https://github.com/amandawhite"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Amanya Maurya", 
       role: "Events Lead", 
       description: "DevOps and infrastructure deployment lead.",
       img: "/TeamPageImages/Amanya Maurya.jpg",
-      linkedin: "https://linkedin.com/in/christopherdavis",
-      github: "https://github.com/christopherdavis"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Ayush Jain", 
       role: "Elixer Lead", 
       description: "Content creation and storytelling lead.",
       img: "/TeamPageImages/Ayush Jain EH.jpg",
-      linkedin: "https://linkedin.com/in/jessicamartinez",
-      github: "https://github.com/jessicamartinez"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Arpan Pal", 
       role: "Elixer Lead", 
       description: "Data analytics and insights lead.",
       img: "/TeamPageImages/Arpan Pal.jpg",
-      linkedin: "https://linkedin.com/in/danielthompson",
-      github: "https://github.com/danielthompson"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Aditya Kumar Vaish", 
       role: "Overall Coordinator", 
       description: "Quality assurance and testing lead.",
       img: "/TeamPageImages/Aditya Kr. OC.jpg",
-      linkedin: "https://linkedin.com/in/nicoleharris",
-      github: "https://github.com/nicoleharris"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Ayushi Singh", 
       role: "Production Lead", 
       description: "Security and compliance lead.",
       img: "/TeamPageImages/Ayushi Singh.jpg",
-      linkedin: "https://linkedin.com/in/andrewclark",
-      github: "https://github.com/andrewclark"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Aadarsh Dhiman", 
       role: "Production Lead", 
       description: "Community engagement and outreach lead.",
       img: "/TeamPageImages/Aadarsh Dhiman.jpg",
-      linkedin: "https://linkedin.com/in/sophieturner",
-      github: "https://github.com/sophieturner"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Sakshi Vishnoi", 
       role: "Social Media Lead", 
       description: "Product strategy and development lead.",
       img: "/TeamPageImages/Sakshi Vishnoi.jpg",
-      linkedin: "https://linkedin.com/in/nathanbrooks",
-      github: "https://github.com/nathanbrooks"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     },
     { 
       name: "Aditya Kumar Vaish", 
       role: "Social Media Lead", 
       description: "Brand strategy and creative communications lead.",
       img: "/TeamPageImages/Aditya Kr. SM.jpg",
-      linkedin: "https://linkedin.com/in/emmawilson",
-      github: "https://github.com/emmawilson"
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/"
     }
   ]
 };
