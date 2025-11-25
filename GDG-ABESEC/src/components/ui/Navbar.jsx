@@ -2,14 +2,10 @@
 import React, { useRef, useState } from "react";
 import {
   IconHome,
-  IconUser,
-  IconMovie,
-  IconSettings,
-  IconLayoutNavbarCollapse,
-  IconCalendarEvent,
-  IconHelpCircle,
   IconInfoCircle,
+  IconCalendarEvent,
   IconUsers,
+  IconHelpCircle,
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
@@ -19,7 +15,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion/react";
+} from "framer-motion";
 
 function cn(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -109,7 +105,7 @@ const FloatingDockMobile = ({ items, className }) => {
   );
 };
 
-// -------------------- Desktop Dock --------------------
+// -------------------- Desktop Dock with Glass Effect --------------------
 
 const FloatingDockDesktop = ({ items, className }) => {
   let mouseX = useMotionValue(Infinity);
@@ -118,9 +114,12 @@ const FloatingDockDesktop = ({ items, className }) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "fixed mx-auto top-14 left-1/2 z-50 -translate-x-1/2 transform h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 hidden lg:flex dark:bg-neutral-900 shadow-lg",
+        "fixed mx-auto top-14 left-1/2 z-50 -translate-x-1/2 transform h-16 items-end gap-4 rounded-2xl px-4 pb-3 hidden lg:flex shadow-2xl backdrop-blur-md bg-white/5 border border-white/10",
         className
       )}
+      style={{
+        boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+      }}
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -178,7 +177,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg"
       >
         <AnimatePresence>
           {hovered && (
@@ -186,7 +185,7 @@ function IconContainer({ mouseX, title, icon, href }) {
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white shadow-md"
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-white/20 bg-black/80 backdrop-blur-md px-2 py-0.5 text-xs whitespace-pre text-white shadow-md"
             >
               {title}
             </motion.div>
@@ -203,33 +202,33 @@ function IconContainer({ mouseX, title, icon, href }) {
   );
 }
 
-// -------------------- Landing Page Component --------------------
+// -------------------- Navbar Component --------------------
 
 export default function Navbar() {
   const items = [
     {
       title: "Home",
-      icon: <IconHome className="w-full h-full text-blue-500" />,
+      icon: <IconHome className="w-full h-full text-blue-400" />,
       href: "/",
     },
     {
       title: "About",
-      icon: <IconInfoCircle className="w-full h-full text-green-500" />,
+      icon: <IconInfoCircle className="w-full h-full text-green-400" />,
       href: "#about",
     },
     {
       title: "Events",
-      icon: <IconCalendarEvent className="w-full h-full text-pink-500" />,
+      icon: <IconCalendarEvent className="w-full h-full text-pink-400" />,
       href: "/events",
     },
     {
       title: "Team",
-      icon: <IconUsers className="w-full h-full text-orange-500" />,
+      icon: <IconUsers className="w-full h-full text-orange-400" />,
       href: "/team",
     },
     {
       title: "Help",
-      icon: <IconHelpCircle className="w-full h-full text-yellow-500" />,
+      icon: <IconHelpCircle className="w-full h-full text-yellow-400" />,
       href: "#help",
     },
   ];

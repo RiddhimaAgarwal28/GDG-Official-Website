@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
+      {/* Animated Background Grid */}
       <div className="absolute inset-0 z-0">
         <Squares
           direction="diagonal"
@@ -15,6 +16,7 @@ const Home = () => {
         />
       </div>
 
+      {/* Logo and Branding - Fixed Position */}
       <div className="relative z-100 pointer-events-none">
         <img
           src="https://www.svgrepo.com/show/353810/google-developers.svg"
@@ -36,6 +38,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Main Content - Centered */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 z-20 pointer-events-none">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -56,8 +59,10 @@ const Home = () => {
         </motion.h2>
       </div>
 
+      {/* Navigation Bar */}
       <Navbar />
 
+      {/* Spacer */}
       <div className="h-20"></div>
     </div>
   );
